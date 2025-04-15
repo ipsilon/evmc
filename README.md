@@ -108,7 +108,7 @@ Licensed under the [Apache License, Version 2.0].
 [eip1962-evmc]: https://github.com/axic/eip1962-evmc
 [erigon]: https://github.com/erigontech/erigon
 [ssvm-evmc]: https://github.com/second-state/ssvm-evmc
-[Gitter]: https://gitter.im/ethereum/evmc
+[Gitter]: https://app.gitter.im/#/room/#ethereum_evmc:gitter.im
 [aleth-interpreter]: https://github.com/ethereum/aleth/tree/master/libaleth-interpreter
 [aleth]: https://github.com/ethereum/aleth
 [Solidity]: https://github.com/ethereum/solidity
