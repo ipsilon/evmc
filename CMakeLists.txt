@@ -60,6 +60,7 @@ endif()
 set(EVMC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 add_subdirectory(lib)
+add_subdirectory(tools/evmc)
 
 write_basic_package_version_file(evmcConfigVersion.cmake COMPATIBILITY ExactVersion)
 
