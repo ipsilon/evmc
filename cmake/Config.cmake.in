@@ -1,6 +1,0 @@
-@PACKAGE_INIT@
-
-include(${CMAKE_CURRENT_LIST_DIR}/evmcTargets.cmake)
-check_required_components(evmc)
-
-include(${CMAKE_CURRENT_LIST_DIR}/EVMC.cmake)

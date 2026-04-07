@@ -13,12 +13,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_CURRENT_
 include(CableBuildType)
 include(CableCompilerSettings)
 include(CablePackage)
-include(CMakeDependentOption)
-include(CMakePackageConfigHelpers)
-
-option(EVMC_INSTALL "Enable EVMC installation (e.g. make install)" ON)
-
-option(EVMC_TESTING "Build EVMC tests" OFF)
 
 cable_set_build_type(DEFAULT Release CONFIGURATION_TYPES Debug Release)
 
@@ -61,27 +55,3 @@ set(EVMC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 add_subdirectory(lib)
 add_subdirectory(tools/evmc)
-
-write_basic_package_version_file(evmcConfigVersion.cmake COMPATIBILITY ExactVersion)
-
-configure_package_config_file(
-    cmake/Config.cmake.in
-    evmcConfig.cmake
-    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/evmc
-)
-
-if(EVMC_INSTALL)
-    install(DIRECTORY include/evmc DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-
-    install(
-        EXPORT evmcTargets
-        NAMESPACE evmc::
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/evmc
-    )
-    install(
-        FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/evmcConfig.cmake
-        ${CMAKE_CURRENT_BINARY_DIR}/evmcConfigVersion.cmake
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/evmc
-    )
-endif()
